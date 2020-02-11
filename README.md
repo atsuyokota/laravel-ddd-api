@@ -1,11 +1,10 @@
 # API sample using Laravel
 
-### Docker Composeで起動
-```
+### Docker Compose
+```sh
+# start
 docker-compose -f ./docker/docker-compose.yml up -d
-```
-
-### Docker Composeで停止
-```
+# stop
 docker-compose -f ./docker/docker-compose.yml stop
 ```
+

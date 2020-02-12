@@ -1,5 +1,9 @@
 FROM amazonlinux:2
 
+# Copy Setting
+COPY httpd.conf /etc/httpd/conf/httpd.conf
+COPY php.ini /etc/php.ini
+
 RUN yum update -y \
     && amazon-linux-extras install php7.3 \
     && yum install -y php php-cli php-common php-devel php-fpm php-gd php-json php-mbstring php-pear php-opcache phpunit yum install php-zip \

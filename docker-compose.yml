@@ -1,0 +1,21 @@
+version: '3'
+services:
+
+  httpd:
+    image: httpd-laravel
+    build: ./docker/httpd
+    container_name: httpd-laravel
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - 8888:80
+
+  mysql:
+    image: mysql
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      TZ: 'Asia/Tokyo'
+    ports:
+    - 3306:3306

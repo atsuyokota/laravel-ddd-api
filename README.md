@@ -1,5 +1,3 @@
-# API sample using Laravel
-
 ### Docker Compose
 ```sh
 # start

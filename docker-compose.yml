@@ -14,6 +14,8 @@ services:
     image: mysql
     container_name: mysql
     restart: always
+    volumes:
+      - ./docker/mysql:/etc/mysql/conf.d
     environment:
       MYSQL_ROOT_PASSWORD: password
       TZ: 'Asia/Tokyo'

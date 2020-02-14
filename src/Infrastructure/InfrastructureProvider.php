@@ -1,8 +1,9 @@
 <?php
 
-namespace Infrastructure;
+namespace Demo\Infrastructure;
 
 use Illuminate\Support\ServiceProvider;
+use Demo\Infrastructure\Repositories\ArticleRepositoryInterface;
 
 class InfrastructureProvider extends ServiceProvider
 {
@@ -14,10 +15,10 @@ class InfrastructureProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(
-            \Infrastructure\Repositories\ArticleRepositoryInterface::class,
+            ArticleRepositoryInterface::class,
             function ($app) {
-                return new \Infrastructure\Repositories\ArticleRepository(
-                    new \Infrastructure\Eloquent\ArticleEloquent
+                return new \Demo\Infrastructure\Repositories\ArticleRepository(
+                    new \Demo\Infrastructure\Eloquent\ArticleEloquent
                 );
             }
         );

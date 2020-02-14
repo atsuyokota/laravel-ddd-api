@@ -1,13 +1,13 @@
 <?php
 
-namespace Infrastructure\Repositories;
+namespace Demo\Infrastructure\Repositories;
 
-use Infrastructure\Eloquent\ArticleEloquent;
+use Demo\Infrastructure\Eloquent\ArticleEloquent;
 
 /**
  * Class ArticleRepository
  */
-class ArticleRepository extends implements ArticleRepositoryInterface
+class ArticleRepository implements ArticleRepositoryInterface
 {
     /** @var ArticleEloquent */
     protected $eloquent;
@@ -44,7 +44,7 @@ class ArticleRepository extends implements ArticleRepositoryInterface
      */
     public function findAll()
     {
-        $collection = $this->eloquent->findAll();
+        $collection = $this->eloquent->();
         // TODO:toModel
         return $collection;
     }

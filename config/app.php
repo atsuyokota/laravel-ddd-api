@@ -178,7 +178,7 @@ return [
         /**
          * My Providers
          */
-        Infrastructure\InfrastructureProvider::class,
+        Demo\Infrastructure\InfrastructureProvider::class,
 
     ],
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Infrastructure\Repositories;
+namespace Demo\Infrastructure\Repositories;
 
 /**
  * Interface ArticleRepositoryInterface
@@ -9,14 +9,12 @@ interface ArticleRepositoryInterface
 {
     /**
      * @param $id
-     * @param $options
      * @return mixed
      */
-    public function find($id, $options);
+    public function find($id);
 
     /**
-     * @param $options
      * @return mixed
      */
-    public function findAll($options);
+    public function findAll();
 }

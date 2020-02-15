@@ -21,13 +21,12 @@ class ArticleController extends Controller
     {
         $limit = $request->get('limit', Config::get('app.article_list_limit_default'));
         $cars = $this->repository->findAll();
-        //return response()->json($this->carListTransformer->transform($cars, $lang));
+        var_dump($cars);
     }
 
     public function show(Request $request, string $id)
     {
         $article = $this->repository->find($id);
-        //return response()->json($this->carTransformer->transform($car, $lang));
-        print_r($article);
+        var_dump($article);
     }
 }

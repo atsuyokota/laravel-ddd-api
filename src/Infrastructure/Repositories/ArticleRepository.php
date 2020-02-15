@@ -3,6 +3,8 @@
 namespace Demo\Infrastructure\Repositories;
 
 use Demo\Infrastructure\Eloquent\ArticleEloquent;
+use Demo\Infrastructure\Translator\ArticleTranslator;
+use Illuminate\Support\Collection;
 
 /**
  * Class ArticleRepository
@@ -33,8 +35,7 @@ class ArticleRepository implements ArticleRepositoryInterface
         if (empty($eloquent)) {
             // TODO:: Error Handling
         }
-        // TODO::toModel
-        return $eloquent;
+        return ArticleTranslator::toModel($eloquent);
     }
 
     /**
@@ -44,8 +45,14 @@ class ArticleRepository implements ArticleRepositoryInterface
      */
     public function findAll()
     {
-        $collection = $this->eloquent->();
-        // TODO:toModel
-        return $collection;
+        $collection = $this->eloquent->all();
+        return $this->toModelCollection($collection);
+    }
+
+    public function toModelCollection(Collection $collection): Collection
+    {
+        return $collection->map(function (ArticleEloquent $eloquent) {
+            return ArticleTranslator::toModel($eloquent);
+        });
     }
 }

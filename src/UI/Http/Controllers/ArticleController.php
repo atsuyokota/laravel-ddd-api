@@ -1,10 +1,10 @@
 <?php
 
-namespace Demo\UI\Controllers;
+namespace Demo\UI\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Demo\UI\Resources\ArticleResource;
-use Demo\Domain\UseCase\ArticleUseCase;
+use Demo\UI\Http\Resources\ArticleResource;
+use Demo\Application\UseCase\ArticleUseCase;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;

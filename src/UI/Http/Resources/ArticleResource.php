@@ -1,6 +1,6 @@
 <?php
 
-namespace Demo\UI\Resources;
+namespace Demo\UI\Http\Resources;
 
 use Demo\Domain\Model\Article;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Demo\Domain\UseCase;
+namespace Demo\Application\UseCase;
 
 use Demo\Infrastructure\Repositories\ArticleRepositoryInterface;
 

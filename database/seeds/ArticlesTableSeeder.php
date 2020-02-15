@@ -1,7 +1,13 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Demo\Infrastructure\Eloquent\ArticleEloquent;
 
+/**
+ * Class ArticlesTableSeeder
+ *
+ * php artisan db:seed --class=ArticlesTableSeeder
+ */
 class ArticlesTableSeeder extends Seeder
 {
     /**
@@ -11,12 +17,12 @@ class ArticlesTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('articles')->truncate();
+        ArticleEloquent::truncate();
         $faker = Faker\Factory::create();
-        for ($i=0; $i<10; $i++) {
-            \Demo\Infrastructure\Eloquent\ArticleEloquent::create([
-                'title'=>$faker->text(20),
-                'description'=>$faker->text(200),
+        for ($i = 0; $i < 100; $i++) {
+            ArticleEloquent::create([
+                'title' => $faker->sentence,
+                'description' => $faker->paragraph,
                 'author' => 1,
             ]);
         }

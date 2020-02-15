@@ -23,4 +23,14 @@ final class Article {
     {
         return $this->id;
     }
+
+    public function title()
+    {
+        return $this->title;
+    }
+
+    public function description()
+    {
+        return $this->description;
+    }
 }

@@ -13,10 +13,10 @@ use Illuminate\Http\Request;
 |
 */
 
-
-Route::get('/articles', 'ArticleController@index');
-Route::get('/articles/{id}', 'ArticleController@show');
-
+Route::namespace('\Demo\UI\Controllers')->group(function () {
+    Route::get('/articles', 'ArticleController@index');
+    Route::get('/articles/{id}', 'ArticleController@show');
+});
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Demo\Infrastructure\Repositories\ArticleRepositoryInterface;
+use Demo\Domain\UseCase\ArticleUseCase;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
@@ -10,23 +10,23 @@ use Illuminate\Support\Facades\Config;
 class ArticleController extends Controller
 {
 
-    private $repository;
+    private $usecase;
 
-    public function __construct(ArticleRepositoryInterface $articleRepository)
+    public function __construct(ArticleUseCase $articleUseCase)
     {
-        $this->repository = $articleRepository;
+        $this->usecase = $articleUseCase;
     }
 
     public function index(Request $request)
     {
         $limit = $request->get('limit', Config::get('app.article_list_limit_default'));
-        $cars = $this->repository->findAll();
+        $cars = $this->usecase->findAll();
         var_dump($cars);
     }
 
     public function show(Request $request, string $id)
     {
-        $article = $this->repository->find($id);
+        $article = $this->usecase->find($id);
         var_dump($article);
     }
 }

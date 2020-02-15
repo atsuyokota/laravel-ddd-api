@@ -11,22 +11,14 @@ class ArticlesTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('articles')->insert([
-            [
-                'title' => 'Laravel Blog Title1',
-                'description' => 'Hello, this is description',
+        DB::table('articles')->truncate();
+        $faker = Faker\Factory::create();
+        for ($i=0; $i<10; $i++) {
+            \Demo\Infrastructure\Eloquent\ArticleEloquent::create([
+                'title'=>$faker->text(20),
+                'description'=>$faker->text(200),
                 'author' => 1,
-            ],
-            [
-                'title' => 'Laravel Blog Title2',
-                'description' => 'Hello, this is description2',
-                'author' => 1,
-            ],
-            [
-                'title' => 'Laravel Blog Title3',
-                'description' => 'Hello, this is description3',
-                'author' => 1,
-            ],
-        ]);
+            ]);
+        }
     }
 }

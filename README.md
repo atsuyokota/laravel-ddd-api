@@ -1,12 +1,4 @@
-## RESTful API with Laravel
-
-### Docker Compose
-```sh
-# start
-docker-compose up -d
-# stop
-docker-compose stop
-```
+## RESTful API and DDD with Laravel
 
 
 ### Directory structure

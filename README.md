@@ -1,4 +1,4 @@
-## RESTful API and DDD with Laravel
+## RESTful API and DDD sample with Laravel
 
 
 ## Installation

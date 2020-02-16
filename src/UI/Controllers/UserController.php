@@ -2,14 +2,13 @@
 
 namespace Demo\UI\Controllers;
 
-use App\Http\Controllers\Controller;
 use Demo\UI\Resources\UserResource;
 use Demo\Application\UseCase\UserUseCase;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
 
-class UserController extends Controller
+class UserController extends ApiController
 {
 
     private $usecase;
@@ -23,14 +22,18 @@ class UserController extends Controller
 
     public function index(Request $request)
     {
-        $limit = $request->get('limit', Config::get('app.article_list_limit_default'));
-        $articles = $this->usecase->findAll();
-        return $this->resouce->collection($articles);
+        $limit = $request->get('limit', Config::get('app.list_limit_default'));
+        $users = $this->usecase->findAll();
+        $data = $this->resouce->collection($users);
+        return $this->respondSuccess($data, [
+            'limit'        => $limit,
+        ]);
     }
 
     public function show(Request $request, string $id)
     {
-        $article = $this->usecase->find($id);
-        return $this->resouce->toArray($article);
+        $user = $this->usecase->find($id);
+        $data = $this->resouce->toArray($user);
+        return $this->respondSuccess($data);
     }
 }

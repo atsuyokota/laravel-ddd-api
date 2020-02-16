@@ -15,10 +15,11 @@ class UsersTableSeeder extends Seeder
         UserEloquent::truncate();
         $faker = Faker\Factory::create();
         for ($i = 0; $i < 100; $i++) {
+            $gender = $faker->randomElement(['male', 'female']);
             UserEloquent::create([
-                'name' => $faker->name,
+                'name' => $faker->name($gender),
                 'email' => $faker->unique()->safeEmail,
-                'gender' => $faker->randomElement(['M', 'F']),
+                'gender' => $gender === 'male' ? 'M': 'F',
                 'date_of_birth' => $faker->dateTimeBetween('-80 years', '-20years')->format('Y-m-d')
             ]);
         }

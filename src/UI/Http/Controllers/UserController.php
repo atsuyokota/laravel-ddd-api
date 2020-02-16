@@ -3,19 +3,19 @@
 namespace Demo\UI\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Demo\UI\Http\Resources\ArticleResource;
-use Demo\Application\UseCase\ArticleUseCase;
+use Demo\UI\Http\Resources\UserResource;
+use Demo\Application\UseCase\UserUseCase;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
 
-class ArticleController extends Controller
+class UserController extends Controller
 {
 
     private $usecase;
     private $resouce;
 
-    public function __construct(ArticleUseCase $articleUseCase, ArticleResource $articleResource)
+    public function __construct(UserUseCase $articleUseCase, UserResource $articleResource)
     {
         $this->usecase = $articleUseCase;
         $this->resouce = $articleResource;

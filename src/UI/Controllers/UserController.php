@@ -1,9 +1,9 @@
 <?php
 
-namespace Demo\UI\Http\Controllers;
+namespace Demo\UI\Controllers;
 
 use App\Http\Controllers\Controller;
-use Demo\UI\Http\Resources\UserResource;
+use Demo\UI\Resources\UserResource;
 use Demo\Application\UseCase\UserUseCase;
 
 use Illuminate\Http\Request;

@@ -2,22 +2,24 @@
 
 namespace Demo\UI\Http\Resources;
 
-use Demo\Domain\Model\Article;
+use Demo\Domain\Model\User;
 
-class ArticleResource
+class UserResource
 {
     /**
      * Transform the resource into an array.
      *
-     * @param Article $article
+     * @param User $user
      * @return array
      */
-    public function toArray(Article $article)
+    public function toArray(User $user)
     {
         return [
-            'id' => $article->id(),
-            'title' => $article->title(),
-            'description' => $article->description(),
+            'id' => $user->id(),
+            'name' => $user->name(),
+            'email' => $user->email(),
+            'gender' => $user->gender(),
+            'date_of_birth' => $user->dateOfBirth()
         ];
     }
 

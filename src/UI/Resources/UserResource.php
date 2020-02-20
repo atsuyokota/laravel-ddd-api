@@ -16,8 +16,8 @@ class UserResource
     {
         return [
             'id' => $user->id(),
-            'name' => $user->name(),
-            'email' => $user->email(),
+            'name' => $user->name()->value(),
+            'email' => $user->email()->value(),
             'gender' => $user->gender(),
             'date_of_birth' => $user->dateOfBirth()
         ];

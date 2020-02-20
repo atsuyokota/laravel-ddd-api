@@ -2,6 +2,7 @@
 
 namespace App\Exceptions;
 
+use Demo\Domain\Exception\InvalidDomainException;
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
@@ -50,6 +51,29 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        if ($exception instanceof InvalidDomainException) {
+            return $this->respondError($exception->getMessage(), '404');
+        }
         return parent::render($request, $exception);
+    }
+
+    /**
+     * @param $message
+     * @param $code
+     * @param array $errors エラー詳細
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function respondError($message, $code, $errors = [])
+    {
+        $json = [
+            'error' => [
+                'code'    => $code,
+                'message' => $message
+            ]
+        ];
+        if (!empty($errors)) {
+            $json['error']['errors'] = $errors;
+        }
+        return response()->json($json, $code);
     }
 }

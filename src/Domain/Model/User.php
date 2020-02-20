@@ -3,6 +3,7 @@
 namespace Demo\Domain\Model;
 
 final class User {
+
     private $id;
 
     private $name;
@@ -11,7 +12,12 @@ final class User {
 
     private $dateOfBirth;
 
-    public function __construct($id, $name, $email, $gender, $dateOfBirth)
+    public function __construct(
+        $id,
+        Name $name,
+        Email $email,
+        $gender,
+        $dateOfBirth)
     {
         $this->id = $id;
         $this->name = $name;
@@ -25,12 +31,12 @@ final class User {
         return $this->id;
     }
 
-    public function name()
+    public function name(): Name
     {
         return $this->name;
     }
 
-    public function email()
+    public function email(): Email
     {
         return $this->email;
     }

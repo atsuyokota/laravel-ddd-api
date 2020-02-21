@@ -12,24 +12,34 @@ php artisan db:seed
 
 ### Directory structure
 ```
-├── Application
-│   └── UseCase
-│       └── UserUseCase.php
-├── Domain
-│   └── Model
-│       └── User.php
-├── Infrastructure
-│   ├── Eloquent
-│   │   └── UserEloquent.php
-│   ├── InfrastructureProvider.php
-│   ├── Repositories
-│   │   ├── UserRepository.php
-│   │   └── UserRepositoryInterface.php
-│   └── Translator
-│       └── UserTranslator.php
-└── UI
-    ├── Controllers
-    │   └── UserController.php
-    └── Resources
-        └── UserResource.php
+src/
+└── Demo
+    ├── Application
+    │   └── UseCase
+    │       └── UserUseCase.php
+    ├── Domain
+    │   ├── Exception
+    │   │   └── InvalidDomainException.php
+    │   └── Model
+    │       ├── DateOfBirth.php
+    │       ├── Email.php
+    │       ├── Gender.php
+    │       ├── Name.php
+    │       └── User.php
+    ├── Infrastructure
+    │   ├── Eloquent
+    │   │   └── UserEloquent.php
+    │   ├── InfrastructureProvider.php
+    │   ├── Repositories
+    │   │   ├── UserRepository.php
+    │   │   └── UserRepositoryInterface.php
+    │   └── Translator
+    │       └── UserTranslator.php
+    └── UI
+        ├── Controllers
+        │   ├── ApiController.php
+        │   └── UserController.php
+        └── Resources
+            └── UserResource.php
+
 ```

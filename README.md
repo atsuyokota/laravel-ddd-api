@@ -1,4 +1,4 @@
-## RESTful API and DDD sample with Laravel
+# RESTful API and DDD sample with Laravel
 
 
 ## Installation
@@ -10,10 +10,10 @@ php artisan migrate
 php artisan db:seed
 ```
 
-### Architecture
+## Architecture
 <img src=https://user-images.githubusercontent.com/6086624/75080300-f685df00-554e-11ea-9025-543bd167116e.png width=250>
 
-### Directory structure
+## Directory structure
 ```
 src/
 └── Demo

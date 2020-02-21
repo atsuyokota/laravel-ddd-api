@@ -10,9 +10,9 @@ class Gender
 
     const FEMALE = 'F';
 
-    private static $valueToName = [
-        self::MALE => 'M',
-        self::FEMALE => 'F',
+    private static $consts = [
+        self::MALE,
+        self::FEMALE,
     ];
 
     private function __construct(string $value)
@@ -20,9 +20,14 @@ class Gender
         $this->value = $value;
     }
 
+    /**
+     * @param $value
+     * @return static
+     * @throws InvalidDomainException
+     */
     public static function from($value)
     {
-        if (!isset(self::$valueToName[$value])) {
+        if (!in_array($value, self::$consts)) {
             throw new InvalidDomainException(sprintf(
                 'Enum %s has no name defined for value %s', __CLASS__, $value));
         }

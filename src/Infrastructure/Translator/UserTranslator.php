@@ -3,6 +3,7 @@
 namespace Demo\Infrastructure\Translator;
 
 use Demo\Domain\Exception\InvalidDomainException;
+use Demo\Domain\Model\DateOfBirth;
 use Demo\Domain\Model\Email;
 use Demo\Domain\Model\Gender;
 use Demo\Domain\Model\User;
@@ -23,7 +24,7 @@ class UserTranslator
                 Name::from($eloquent->name),
                 Email::from($eloquent->email),
                 Gender::from($eloquent->gender),
-                $eloquent->date_of_birth
+                DateOfBirth::from($eloquent->date_of_birth)
             );
         } catch (InvalidDomainException $e) {
             // Swallow the exception to continue

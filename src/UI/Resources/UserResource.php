@@ -19,7 +19,8 @@ class UserResource
             'name' => $user->name()->value(),
             'email' => $user->email()->value(),
             'gender' => $user->gender()->value(),
-            'date_of_birth' => $user->dateOfBirth()
+            'date_of_birth' => $user->dateOfBirth()->value(),
+            'senior' => $user->dateOfBirth()->isSenior()
         ];
     }
 

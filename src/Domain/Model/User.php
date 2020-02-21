@@ -13,11 +13,11 @@ final class User {
     private $dateOfBirth;
 
     public function __construct(
-        $id,
+        int $id,
         Name $name,
         Email $email,
         Gender $gender,
-        $dateOfBirth)
+        DateOfBirth $dateOfBirth)
     {
         $this->id = $id;
         $this->name = $name;
@@ -26,7 +26,7 @@ final class User {
         $this->dateOfBirth = $dateOfBirth;
     }
 
-    public function id()
+    public function id(): int
     {
         return $this->id;
     }
@@ -46,7 +46,7 @@ final class User {
         return $this->gender;
     }
 
-    public function dateOfBirth()
+    public function dateOfBirth(): DateOfBirth
     {
         return $this->dateOfBirth;
     }

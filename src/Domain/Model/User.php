@@ -16,7 +16,7 @@ final class User {
         $id,
         Name $name,
         Email $email,
-        $gender,
+        Gender $gender,
         $dateOfBirth)
     {
         $this->id = $id;
@@ -41,7 +41,7 @@ final class User {
         return $this->email;
     }
 
-    public function gender()
+    public function gender(): Gender
     {
         return $this->gender;
     }

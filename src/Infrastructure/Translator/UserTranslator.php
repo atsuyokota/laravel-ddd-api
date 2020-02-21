@@ -2,6 +2,9 @@
 
 namespace Demo\Infrastructure\Translator;
 
+use Demo\Domain\Exception\InvalidDomainException;
+use Demo\Domain\Model\Email;
+use Demo\Domain\Model\Gender;
 use Demo\Domain\Model\User;
 use Demo\Domain\Model\Name;
 use Demo\Infrastructure\Eloquent\UserEloquent;
@@ -14,12 +17,16 @@ class UserTranslator
 {
     public static function toModel(UserEloquent $eloquent): User
     {
-        return new User(
-            $eloquent->id,
-            Name::from($eloquent->name),
-            $eloquent->email,
-            $eloquent->gender,
-            $eloquent->date_of_birth,
-        );
+        try {
+            return new User(
+                $eloquent->id,
+                Name::from($eloquent->name),
+                Email::from($eloquent->email),
+                Gender::from($eloquent->gender),
+                $eloquent->date_of_birth
+            );
+        } catch (InvalidDomainException $e) {
+            // Swallow the exception to continue
+        }
     }
 }

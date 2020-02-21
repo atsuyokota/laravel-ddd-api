@@ -18,7 +18,7 @@ class UserResource
             'id' => $user->id(),
             'name' => $user->name()->value(),
             'email' => $user->email()->value(),
-            'gender' => $user->gender(),
+            'gender' => $user->gender()->value(),
             'date_of_birth' => $user->dateOfBirth()
         ];
     }

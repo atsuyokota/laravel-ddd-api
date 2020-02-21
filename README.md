@@ -11,7 +11,7 @@ php artisan db:seed
 ```
 
 ### Architecture
-<img src=https://user-images.githubusercontent.com/6086624/75078907-431aeb80-554a-11ea-86e6-253e5a95925e.png width=300>
+<img src=https://user-images.githubusercontent.com/6086624/75078907-431aeb80-554a-11ea-86e6-253e5a95925e.png width=250>
 
 ### Directory structure
 ```

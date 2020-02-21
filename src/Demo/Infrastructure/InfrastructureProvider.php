@@ -2,6 +2,8 @@
 
 namespace Demo\Infrastructure;
 
+use Demo\Infrastructure\Eloquent\UserEloquent;
+use Demo\Infrastructure\Repositories\UserRepository;
 use Illuminate\Support\ServiceProvider;
 use Demo\Infrastructure\Repositories\UserRepositoryInterface;
 
@@ -17,8 +19,8 @@ class InfrastructureProvider extends ServiceProvider
         $this->app->bind(
             UserRepositoryInterface::class,
             function ($app) {
-                return new \Demo\Infrastructure\Repositories\UserRepository(
-                    new \Demo\Infrastructure\Eloquent\UserEloquent
+                return new UserRepository(
+                    new UserEloquent
                 );
             }
         );

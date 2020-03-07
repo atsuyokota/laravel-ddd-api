@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::namespace('\Demo\UI\Controllers')->group(function () {
+Route::namespace('\Demo\Presentation\Controllers')->group(function () {
     Route::get('/users', 'UserController@index');
     Route::get('/users/{id}', 'UserController@show');
 });

@@ -1,6 +1,6 @@
 <?php
 
-namespace Demo\UI\Resources;
+namespace Demo\Presentation\Resources;
 
 use Demo\Domain\Model\User;
 

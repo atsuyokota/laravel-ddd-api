@@ -2,10 +2,10 @@
 
 namespace Demo\Infrastructure;
 
+use Demo\Domain\Repository\UserRepositoryInterface;
 use Demo\Infrastructure\Eloquent\UserEloquent;
-use Demo\Infrastructure\Repositories\UserRepository;
+use Demo\Infrastructure\Repository\UserRepository;
 use Illuminate\Support\ServiceProvider;
-use Demo\Infrastructure\Repositories\UserRepositoryInterface;
 
 class InfrastructureProvider extends ServiceProvider
 {

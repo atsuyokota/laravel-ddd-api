@@ -1,7 +1,7 @@
 # RESTful API and DDD sample with Laravel
 
 
-## Installation
+## 環境構築
 - Copy `.env` file from `.env.example`, and modify `DB_HOST` and `DB_PASSWORD` according to your envirnoment.
 - Follow the steps below.
 ```
@@ -11,7 +11,9 @@ php artisan db:seed
 ```
 
 ## アーキテクチャー
-<img src=https://user-images.githubusercontent.com/6086624/76143512-618cf500-60bb-11ea-91ec-3193b8073b27.png width=400>
+- ドメイン層にレポジトリのインターフェイスを設置し、インフラストラクチャー層から依存するように実装しています。
+
+<img src=https://user-images.githubusercontent.com/6086624/76143827-027caf80-60be-11ea-965a-fc3daa8422a8.png>
 
 ## ディレクトリ構成
 ```

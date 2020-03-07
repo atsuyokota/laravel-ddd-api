@@ -10,10 +10,10 @@ php artisan migrate
 php artisan db:seed
 ```
 
-## Architecture
-<img src=https://user-images.githubusercontent.com/6086624/75080300-f685df00-554e-11ea-9025-543bd167116e.png width=250>
+## アーキテクチャー
+<img src=https://user-images.githubusercontent.com/6086624/76143512-618cf500-60bb-11ea-91ec-3193b8073b27.png width=400>
 
-## Directory structure
+## ディレクトリ構成
 ```
 src/
 └── Demo

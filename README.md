@@ -23,22 +23,23 @@ src/
     ├── Domain
     │   ├── Exception
     │   │   └── InvalidDomainException.php
-    │   └── Model
-    │       ├── DateOfBirth.php
-    │       ├── Email.php
-    │       ├── Gender.php
-    │       ├── Name.php
-    │       └── User.php
+    │   ├── Model
+    │   │   ├── DateOfBirth.php
+    │   │   ├── Email.php
+    │   │   ├── Gender.php
+    │   │   ├── Name.php
+    │   │   └── User.php
+    │   └── Repository
+    │       └── UserRepositoryInterface.php
     ├── Infrastructure
     │   ├── Eloquent
     │   │   └── UserEloquent.php
     │   ├── InfrastructureProvider.php
-    │   ├── Repositories
-    │   │   ├── UserRepository.php
-    │   │   └── UserRepositoryInterface.php
+    │   ├── Repository
+    │   │   └── UserRepository.php
     │   └── Translator
     │       └── UserTranslator.php
-    └── UI
+    └── Presentation
         ├── Controllers
         │   ├── ApiController.php
         │   └── UserController.php

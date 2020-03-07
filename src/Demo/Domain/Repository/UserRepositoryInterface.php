@@ -1,6 +1,6 @@
 <?php
 
-namespace Demo\Infrastructure\Repositories;
+namespace Demo\Domain\Repository;
 
 use Demo\Domain\Model\User;
 use Illuminate\Support\Collection;

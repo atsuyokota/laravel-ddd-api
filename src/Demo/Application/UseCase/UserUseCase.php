@@ -2,7 +2,7 @@
 
 namespace Demo\Application\UseCase;
 
-use Demo\Infrastructure\Repositories\UserRepositoryInterface;
+use Demo\Domain\Repository\UserRepositoryInterface;
 
 /**
  * Class UserUseCase

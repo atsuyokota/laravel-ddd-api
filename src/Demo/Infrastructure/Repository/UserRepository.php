@@ -1,8 +1,9 @@
 <?php
 
-namespace Demo\Infrastructure\Repositories;
+namespace Demo\Infrastructure\Repository;
 
 use Demo\Domain\Model\User;
+use Demo\Domain\Repository\UserRepositoryInterface;
 use Demo\Infrastructure\Eloquent\UserEloquent;
 use Demo\Infrastructure\Translator\UserTranslator;
 use Illuminate\Support\Collection;

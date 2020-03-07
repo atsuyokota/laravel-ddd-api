@@ -1,8 +1,8 @@
 <?php
 
-namespace Demo\UI\Controllers;
+namespace Demo\Presentation\Controllers;
 
-use Demo\UI\Resources\UserResource;
+use Demo\Presentation\Resources\UserResource;
 use Demo\Application\UseCase\UserUseCase;
 
 use Illuminate\Http\Request;
